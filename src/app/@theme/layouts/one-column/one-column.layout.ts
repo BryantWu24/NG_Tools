@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
     selector: 'ngx-one-column-layout',
     styleUrls: ['./one-column.layout.scss'],
     template: `
-    <nb-layout windowMode>
+    
+    <nb-layout >
       <nb-layout-header fixed>
         <ngx-header></ngx-header>
       </nb-layout-header>
@@ -20,6 +21,7 @@ import { Component } from '@angular/core';
       
     </nb-layout>
   `,
+  // <nb-layout windowMode>
     //   <nb-layout-footer fixed>
     //      <ngx-footer></ngx-footer>
     //   </nb-layout-footer>

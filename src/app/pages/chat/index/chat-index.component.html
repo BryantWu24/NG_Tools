@@ -1,9 +1,41 @@
 <div class="row">
   <div class="col-lg-7 col-md-5 col-sm-12">
     <nb-card>
-      <nb-card-header>Pie</nb-card-header>
+      <nb-card-header>房間清單</nb-card-header>
       <nb-card-body>
-        123
+        <div style="display: flex; flex-wrap: wrap;">
+          <div *ngFor="let room of roomList" style="display: flex; justify-content: center;"
+            class="col-lg-4 col-md-12 col-sm-12 col-12">
+            <nb-card>
+              <nb-card-header>
+                <div style="display: flex;justify-content:space-between;">
+                  <div>
+                    {{room.name}}
+                  </div>
+                  <div>
+                    <button nbButton status="primary" (click)="enterRoom(room.id)">
+                      <nb-icon icon="navigation-2-outline"></nb-icon>
+                    </button>
+                  </div>
+                </div>
+
+              </nb-card-header>
+              <nb-card-body style="padding:unset;">
+                <img [src]="room.coverPicUrl" width="100%" height="100%">
+              </nb-card-body>
+              <nb-card-footer>
+                <div style="display: flex; ">
+                  <div></div>
+                  <div>
+                    <div>擁有者：{{room.owner}}</div>
+                    <div>房間人數:{{room.memberCount}}</div>
+                    <div>建立時間：{{room.createTime}}</div>
+                  </div>
+                </div>
+              </nb-card-footer>
+            </nb-card>
+          </div>
+        </div>
       </nb-card-body>
     </nb-card>
   </div>
@@ -19,10 +51,11 @@
                   <nb-list-item *ngFor="let c of contact">
                     <div class="row" style="width: 100%;">
                       <div class="col-9 col-sm-9 col-md-10 col-lg-10" style="width: 100%;">
-                        <nb-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.type" size="medium" style="width: 100%;"
-                          shape="rectangle"></nb-user>
+                        <nb-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.type" size="medium"
+                          style="width: 100%;" shape="rectangle"></nb-user>
                       </div>
-                      <div class="col-3 col-sm-3 col-md-2 col-lg-2 " style="display: flex;align-items:center; justify-content: flex-end;">
+                      <div class="col-3 col-sm-3 col-md-2 col-lg-2 "
+                        style="display: flex;align-items:center; justify-content: flex-end;">
                         <nb-icon icon="message-circle-outline" (click)="enterRoom()"></nb-icon>
                       </div>
                     </div>
@@ -31,18 +64,19 @@
               </nb-tab>
               <nb-tab tabTitle="Recent" style="padding:unset;">
                 <nb-list>
-                    <nb-list-item  *ngFor="let c of recent">
-                      <div class="row" style="width: 100%;">
-                        <div class="col-9 col-sm-9 col-md-10 col-lg-10" style="width: 100%;">
-                          <nb-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.time" size="medium" style="width: 100%;"
-                            shape="rectangle"></nb-user>
-                        </div>
-                        <div class="col-3 col-sm-3 col-md-2 col-lg-2 " style="display: flex;align-items:center;justify-content: flex-end;">
-                          <nb-icon icon="message-circle-outline" (click)="enterRoom()"></nb-icon>
-                        </div>
+                  <nb-list-item *ngFor="let c of recent">
+                    <div class="row" style="width: 100%;">
+                      <div class="col-9 col-sm-9 col-md-10 col-lg-10" style="width: 100%;">
+                        <nb-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.time" size="medium"
+                          style="width: 100%;" shape="rectangle"></nb-user>
                       </div>
-                    </nb-list-item>
-                  </nb-list>
+                      <div class="col-3 col-sm-3 col-md-2 col-lg-2 "
+                        style="display: flex;align-items:center;justify-content: flex-end;">
+                        <nb-icon icon="message-circle-outline" (click)="enterRoom()"></nb-icon>
+                      </div>
+                    </div>
+                  </nb-list-item>
+                </nb-list>
               </nb-tab>
             </nb-tabset>
           </nb-card>

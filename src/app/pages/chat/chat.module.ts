@@ -7,6 +7,7 @@ import { ThemeModule } from '../../@theme/theme.module';
 import { ChatRoutingModule, routedComponents } from './chat-routing.module';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FormsModule } from '@angular/forms';
+import { ChatService } from './chat.service';
 const components = [
 ];
 
@@ -27,5 +28,6 @@ const components = [
         FormsModule
     ],
     declarations: [...routedComponents, ...components],
+    providers: [ChatService]
 })
 export class ChatModule { }

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ChatService } from '../chat.service';
 
 @Component({
     selector: 'jb-chat-index',
@@ -7,7 +8,10 @@ import { Router } from '@angular/router';
 })
 export class ChatIndexComponent {
 
-    constructor(private router:Router){
+    constructor(private router: Router, private chatService: ChatService) {
+        this.chatService.getRoomList().subscribe((v) => {
+            this.roomList = v;
+        });
 
     }
     private users = {
@@ -27,28 +31,34 @@ export class ChatIndexComponent {
 
     private time: Date = new Date;
     public recent = [
-        { user: this.users.alan, type: this.types.friends, time:'2020-07-20 12:20:13'},
-        { user: this.users.eva, type: this.types.friends, time: '2020-07-20 12:10:13'},
-        { user: this.users.nick, type: this.types.black, time:'2020-07-20 12:05:13'},
-        { user: this.users.lee, type: this.types.family, time: '2020-07-19 12:20:13'},
-        { user: this.users.jack, type: this.types.black, time:'2020-07-19 12:15:13'},
-        { user: this.users.kate, type: this.types.family, time: '2020-07-19 12:10:13'},
-        { user: this.users.kate, type: this.types.friends, time: '2020-07-10 12:20:13'},
-        { user: this.users.jack, type: this.types.black, time:'2020-07-09 12:20:13'},
+        { user: this.users.alan, type: this.types.friends, time: '2020-07-20 12:20:13' },
+        { user: this.users.eva, type: this.types.friends, time: '2020-07-20 12:10:13' },
+        { user: this.users.nick, type: this.types.black, time: '2020-07-20 12:05:13' },
+        { user: this.users.lee, type: this.types.family, time: '2020-07-19 12:20:13' },
+        { user: this.users.jack, type: this.types.black, time: '2020-07-19 12:15:13' },
+        { user: this.users.kate, type: this.types.family, time: '2020-07-19 12:10:13' },
+        { user: this.users.kate, type: this.types.friends, time: '2020-07-10 12:20:13' },
+        { user: this.users.jack, type: this.types.black, time: '2020-07-09 12:20:13' },
     ];
 
-    public contact =  [
-        { user: this.users.alan, type: this.types.family, time:'2020-07-20 12:20:13'},
-        { user: this.users.eva, type: this.types.family, time: '2020-07-20 12:10:13'},
-        { user: this.users.nick, type: this.types.friends, time:'2020-07-20 12:05:13'},
-        { user: this.users.lee, type: this.types.black, time: '2020-07-19 12:20:13'},
-        { user: this.users.jack, type: this.types.friends, time:'2020-07-19 12:15:13'},
-        { user: this.users.kate, type: this.types.family, time: '2020-07-19 12:10:13'},
-        { user: this.users.kate, type: this.types.friends, time: '2020-07-10 12:20:13'},
-        { user: this.users.jack, type: this.types.black, time:'2020-07-09 12:20:13'},
+    public contact = [
+        { user: this.users.alan, type: this.types.family, time: '2020-07-20 12:20:13' },
+        { user: this.users.eva, type: this.types.family, time: '2020-07-20 12:10:13' },
+        { user: this.users.nick, type: this.types.friends, time: '2020-07-20 12:05:13' },
+        { user: this.users.lee, type: this.types.black, time: '2020-07-19 12:20:13' },
+        { user: this.users.jack, type: this.types.friends, time: '2020-07-19 12:15:13' },
+        { user: this.users.kate, type: this.types.family, time: '2020-07-19 12:10:13' },
+        { user: this.users.kate, type: this.types.friends, time: '2020-07-10 12:20:13' },
+        { user: this.users.jack, type: this.types.black, time: '2020-07-09 12:20:13' },
     ];
 
-    enterRoom():void{
-        this.router.navigate(['pages/chat/room']);
+    public roomList;
+
+    enterRoom(roomId?): void {
+        if (roomId)
+            this.router.navigate(['pages/chat/room']);
+        else
+            this.router.navigate(['pages/chat/room']);
     }
+
 }
