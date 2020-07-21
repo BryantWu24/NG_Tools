@@ -1,0 +1,33 @@
+<ng-container *ngIf="message != {} ">
+
+  <div class="jb_outerDiv_other" *ngIf="message.sender == 'other'">
+    <div *ngIf="message.picUrl != undefined">
+      <img [src]="message.picUrl" class="jb_avatar">
+    </div>
+    <div>
+      <div class="jb_name_other">{{message.name}}</div>
+      <div class="jb_messageDiv_other">
+        <div class="jb_message_other">{{message.message}} </div>
+        <div class="jb_time_other"> {{message.time }} </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="jb_outerDiv_myself" *ngIf="message.sender == 'myself'">
+    <div>
+      <div class="jb_name_myself">{{message.name}}</div>
+      <div class="jb_messageDiv_myself">
+        <div class="jb_time_myself"> {{message.time }} </div>
+        <div class="jb_message_myself">{{message.message}} </div>
+      </div>
+    </div>
+    <div>
+      <img [src]="message.picUrl" class="jb_avatar">
+    </div>
+  </div>
+
+  <div class="jb_system" *ngIf="message.sender == 'system'">
+    {{message.message}}  {{message.time }
+  </div>
+  
+</ng-container>

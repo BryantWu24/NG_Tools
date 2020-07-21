@@ -1,0 +1,47 @@
+<!-- <div class="row">
+  <div class="chat-container col-12">
+    <nb-card>
+      <nb-card-header>
+        <div style="width: 100%; display:flex;justify-content: flex-end;">
+
+        </div>
+      </nb-card-header>
+      <nb-card-body>
+        <nb-chat [title]="titleTemp" size="large" status="primary" style="width:100%;bottom:45px;height: 50rem;">
+          <nb-chat-message *ngFor="let msg of messages" [type]="msg.type" [message]="msg.text" [reply]="msg.reply"
+            [sender]="msg.user.name" [date]="msg.date" [files]="msg.files" [quote]="msg.quote" [latitude]="msg.latitude"
+            [longitude]="msg.longitude" [avatar]="msg.user.avatar">
+          </nb-chat-message>
+          <nb-chat-form (send)="sendMessage($event)" [dropFiles]="true">
+          </nb-chat-form>
+        </nb-chat>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+<ng-template #titleTemp>
+  <nb-icon icon="close" (click)="closeChatMsgBox()"></nb-icon>
+</ng-template> -->
+
+<div>
+<nb-card style="height: 45rem; margin-bottom: unset;" >
+  <nb-card-header>
+    <div style="width: 100%; display:flex; justify-content: space-between;">
+      <span>ROOM NAME</span>
+      <nb-icon icon="close" (click)="closeChatMsgBox()"></nb-icon>
+    </div>
+  </nb-card-header>
+  <nb-card-body >
+    <ng-container *ngFor="let item of history">
+      <jb-chatMessage [messageData]=item></jb-chatMessage>
+    </ng-container>
+
+  </nb-card-body>
+</nb-card>
+<div style="display: flex;">
+    <input type="text" nbInput fullWidth shape="semi-round" placeholder="Semi round" [(ngModel)]="userInput" (keyup.enter)="onEnter($event)">
+    <button nbButton status="primary" (click)=sendMessage2()>
+      <nb-icon icon="navigation-2"></nb-icon>
+    </button>
+  </div>
+</div>

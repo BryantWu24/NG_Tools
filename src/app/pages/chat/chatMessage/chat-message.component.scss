@@ -1,0 +1,84 @@
+.jb_avatar {
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: #c5cee0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+  line-height: 2.5rem;
+  font-size: 0.875rem;
+  color: white;
+
+}
+
+.jb_outerDiv_other {
+  width: 100%;
+  display: flex;
+  margin: 1rem 0;
+}
+
+.jb_name_other {
+  padding: 0.5rem;
+}
+
+.jb_messageDiv_other {
+  display: flex;
+  align-items: flex-end;
+  padding-left: 0.5rem;
+}
+
+.jb_message_other {
+  background: #3366ff;
+  color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border-top-left-radius: unset;
+  word-break: break-all;
+}
+
+.jb_time_other {
+  padding-left: 0.5rem;
+}
+
+.jb_outerDiv_myself {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 0;
+}
+
+.jb_name_myself {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.jb_messageDiv_myself {
+  display: flex;
+  align-items: flex-end;
+  padding-right: 0.5rem;
+}
+
+.jb_message_myself {
+  background: #3366ff;
+  color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border-top-right-radius: unset;
+  word-break: break-all;
+}
+
+.jb_time_myself {
+  padding-right: 0.5rem;
+}
+
+.jb_system{
+    display: flex;
+    justify-content: center;
+    background: black;
+    border-radius: 50px;
+    font-size: 0.5rem;
+}

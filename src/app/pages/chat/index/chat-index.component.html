@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-lg-7 col-md-5 col-sm-12">
+    <nb-card>
+      <nb-card-header>Pie</nb-card-header>
+      <nb-card-body>
+        123
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-lg-5 col-md-7 col-sm-12">
+    <nb-card>
+      <nb-card-header>Pie</nb-card-header>
+      <nb-card-body>
+        <div class="col-md-12">
+          <nb-card>
+            <nb-tabset fullWidth>
+              <nb-tab tabTitle="Contact" style="padding:unset;">
+                <nb-list>
+                  <nb-list-item *ngFor="let c of contact">
+                    <div class="row" style="width: 100%;">
+                      <div class="col-9 col-sm-9 col-md-10 col-lg-10" style="width: 100%;">
+                        <nb-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.type" size="medium" style="width: 100%;"
+                          shape="rectangle"></nb-user>
+                      </div>
+                      <div class="col-3 col-sm-3 col-md-2 col-lg-2 " style="display: flex;align-items:center; justify-content: flex-end;">
+                        <nb-icon icon="message-circle-outline" (click)="enterRoom()"></nb-icon>
+                      </div>
+                    </div>
+                  </nb-list-item>
+                </nb-list>
+              </nb-tab>
+              <nb-tab tabTitle="Recent" style="padding:unset;">
+                <nb-list>
+                    <nb-list-item  *ngFor="let c of recent">
+                      <div class="row" style="width: 100%;">
+                        <div class="col-9 col-sm-9 col-md-10 col-lg-10" style="width: 100%;">
+                          <nb-user [picture]="c.user.picture" [name]="c.user.name" [title]="c.time" size="medium" style="width: 100%;"
+                            shape="rectangle"></nb-user>
+                        </div>
+                        <div class="col-3 col-sm-3 col-md-2 col-lg-2 " style="display: flex;align-items:center;justify-content: flex-end;">
+                          <nb-icon icon="message-circle-outline" (click)="enterRoom()"></nb-icon>
+                        </div>
+                      </div>
+                    </nb-list-item>
+                  </nb-list>
+              </nb-tab>
+            </nb-tabset>
+          </nb-card>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
