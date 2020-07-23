@@ -49,4 +49,3 @@ export class D3PieComponent implements OnDestroy, OnInit {
 //     { name: 'USA', value: 5000 },
 //     { name: 'France', value: 7200 },
 // ]
-

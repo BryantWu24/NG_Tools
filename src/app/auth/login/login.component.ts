@@ -27,8 +27,9 @@ export class LoginPageComponent implements OnInit {
                 "passWord": this.passwordInput
             }
             this.http.post<any>(Config.API_Root + Config.API_Login, body).subscribe((res) => {
-                if (res.status == -1)
+                if (res.status == -1) {
                     this.errorMessage = res.data;
+                }
                 else {
                     sessionStorage.setItem('Identity', res.data);
                     this.router.navigate(['/pages/chat/index']);

@@ -55,10 +55,12 @@ export class ChatIndexComponent {
     public roomList;
 
     enterRoom(roomId?): void {
-        if (roomId)
+        if (roomId) {
             this.router.navigate(['pages/chat/room']);
-        else
+        }
+        else {
             this.router.navigate(['pages/chat/room']);
+        }
     }
 
 }

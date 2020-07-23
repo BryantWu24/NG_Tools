@@ -7,7 +7,7 @@ import {
 @Injectable()
 export class AuthGuard implements CanActivate {
     constructor(private router: Router) { }
-    
+
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
         let url: string = state.url;
 
