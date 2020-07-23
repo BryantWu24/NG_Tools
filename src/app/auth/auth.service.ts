@@ -7,9 +7,7 @@ import {
 @Injectable()
 export class AuthGuard implements CanActivate {
     constructor(private router: Router) { }
-
-    public redirectUrl = "/auth/login";
-
+    
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
         let url: string = state.url;
 
@@ -17,11 +15,13 @@ export class AuthGuard implements CanActivate {
     }
 
     checkLogin(url: string): boolean {
-        if (sessionStorage.getItem('Identity')) { return true } else {
+        console.log('doCheck');
+        if (sessionStorage.getItem('Identity')) {
+            return true;
+        } else {
             // 導回登入頁面
             this.router.navigate(['/auth/login']);
             return false;
         }
-
     }
 }
