@@ -7,6 +7,9 @@ export const MENU_ITEMS: NbMenuItem[] = [{
         {
             title: 'D3',
             link: '/pages/analytics/d3',
+        },{
+            title: 'Bar Chart',
+            link: '/pages/analytics/barChart',
         }]
 
 }, {

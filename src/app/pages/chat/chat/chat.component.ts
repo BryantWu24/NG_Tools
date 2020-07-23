@@ -3,6 +3,7 @@ import { ChatService } from '../chat.service';
 import { Router } from '@angular/router';
 import { formatDate, registerLocaleData } from '@angular/common';
 import zhHant from '@angular/common/locales/zh-Hant';
+import { Subscription } from 'rxjs';
 registerLocaleData(zhHant, 'zh-tw');
 @Component({
     selector: 'jb-chat-msgbox',
@@ -14,22 +15,23 @@ export class ChatMsgBoxComponent implements OnDestroy, OnInit {
 
     public history;
     public userInput;
+    public roomId;
+    public roomInfo;
+    public leaveReason: string = '';
     constructor(protected chatService: ChatService, private router: Router) {
-        this.chatService.getHistory().subscribe((v) => {
-            this.history = v;
-        });
+
     }
 
     sendMessage(): void {
         let message = {
             type: 'text',
             name: 'USER',
-            picUrl: 'assets/images/eva.png',
+            avatarPicUrl: 'assets/images/eva.png',
             message: this.userInput,
             sender: 'myself',
             time: formatDate(new Date(), 'HH:mm:ss', 'zh-tw', '+0800')
         }
-        this.chatService.saveHistory(message);
+        this.chatService.setHistory(message);
         this.userInput = "";
     }
 
@@ -37,17 +39,29 @@ export class ChatMsgBoxComponent implements OnDestroy, OnInit {
         this.sendMessage();
     }
 
-
     closeChatMsgBox() {
+        this.chatService.clearChatSessionStorage();
+        this.leaveReason = 'User leave the room';
         this.router.navigate(['/pages/chat/index']);
     }
 
 
     ngOnInit(): void {
+        this.chatService.getHistory().subscribe((data) => {
+            this.history = data;
+        });
+        this.chatService.getRoomInfo().subscribe((info) => {
+            console.log('roomInfo', info);
+            this.roomInfo = info;
+        });
         window.onbeforeunload = () => { this.ngOnDestroy(); }
     }
 
     ngOnDestroy(): void {
-        sessionStorage.setItem('history', JSON.stringify(this.history));
+        if (this.leaveReason == 'User leave the room') {
+
+        } else {
+            this.chatService.saveHistory();
+        }
     }
 }

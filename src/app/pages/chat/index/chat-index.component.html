@@ -13,7 +13,7 @@
                     {{room.name}}
                   </div>
                   <div>
-                    <button nbButton status="primary" (click)="enterRoom(room.id)">
+                    <button nbButton status="primary" (click)="enterRoom(room)">
                       <nb-icon icon="navigation-2-outline"></nb-icon>
                     </button>
                   </div>
@@ -28,7 +28,8 @@
                   <div></div>
                   <div>
                     <div>擁有者：{{room.owner}}</div>
-                    <div>房間人數:{{room.memberCount}}</div>
+                    <div>房間人數:{{room.memberCount}}<span style="padding-left: 0.5rem;">人</span>
+                    </div>
                     <div>建立時間：{{room.createTime}}</div>
                   </div>
                 </div>

@@ -1,8 +1,7 @@
 <ng-container *ngIf="message != {} ">
-
   <div class="jb_outerDiv_other" *ngIf="message.sender == 'other'">
-    <div *ngIf="message.picUrl != undefined">
-      <img [src]="message.picUrl" class="jb_avatar">
+    <div *ngIf="message.avatarPicUrl != undefined">
+      <img [src]="message.avatarPicUrl" class="jb_avatar">
     </div>
     <div>
       <div class="jb_name_other">{{message.name}}</div>
@@ -22,12 +21,10 @@
       </div>
     </div>
     <div>
-      <img [src]="message.picUrl" class="jb_avatar">
+      <img [src]="message.avatarPicUrl" class="jb_avatar">
     </div>
   </div>
-
   <div class="jb_system" *ngIf="message.sender == 'system'">
-    {{message.message}}  {{message.time }
+    {{message.message}} {{message.time }
   </div>
-  
 </ng-container>

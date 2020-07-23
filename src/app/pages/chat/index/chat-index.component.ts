@@ -9,8 +9,8 @@ import { ChatService } from '../chat.service';
 export class ChatIndexComponent {
 
     constructor(private router: Router, private chatService: ChatService) {
-        this.chatService.getRoomList().subscribe((v) => {
-            this.roomList = v;
+        this.chatService.getRoomList().subscribe((list) => {
+            this.roomList = list;
         });
 
     }
@@ -54,8 +54,9 @@ export class ChatIndexComponent {
 
     public roomList;
 
-    enterRoom(roomId?): void {
-        if (roomId) {
+    enterRoom(info?): void {
+        if (info) {
+            this.chatService.setRoomInfo(info);
             this.router.navigate(['pages/chat/room']);
         }
         else {

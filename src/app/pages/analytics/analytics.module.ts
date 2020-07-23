@@ -17,7 +17,7 @@ const components = [
   D3PieComponent,
   D3AreaStackComponent,
   D3PolarComponent,
-  D3AdvancedPieComponent,
+  D3AdvancedPieComponent
 ];
 
 @NgModule({

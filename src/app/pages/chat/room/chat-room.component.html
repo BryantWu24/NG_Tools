@@ -1,24 +1,36 @@
 <div class="row">
   <div class="col-lg-8 col-md-12">
-        <jb-chat-msgbox></jb-chat-msgbox>
+    <jb-chat-msgbox></jb-chat-msgbox>
   </div>
   <div class="col-lg-4 col-md-12">
     <div>
       <nb-card>
-        <nb-card-header>Room</nb-card-header>
+        <nb-card-header>{{roomInfo.name}}</nb-card-header>
         <nb-card-body>
-          Room
+          <nb-list>
+            <nb-list-item>
+              房間編號：{{roomInfo.id}}
+            </nb-list-item>
+            <nb-list-item>
+              房間擁有者：<img [src]="roomInfo.avatarPicUrl" class="jb_avatar"> <span
+                style="padding-left: 0.5rem;">{{roomInfo.owner}}</span>
+            </nb-list-item>
+            <nb-list-item>
+              <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <div>
+                  房間人數：{{roomInfo.memberCount}} 人
+                </div>
+                <div>
+                  <nb-icon icon="list-outline"></nb-icon>
+                </div>
+              </div>
+            </nb-list-item>
+            <nb-list-item>
+              房間創建時間：{{roomInfo.createTime}}
+            </nb-list-item>
+          </nb-list>
         </nb-card-body>
       </nb-card>
     </div>
-    <div>
-      <nb-card>
-        <nb-card-header>Room</nb-card-header>
-        <nb-card-body>
-          Room
-        </nb-card-body>
-      </nb-card>
-    </div>
-
   </div>
 </div>

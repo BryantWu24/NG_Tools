@@ -10,11 +10,10 @@ export class ChatMessageComponent implements OnInit, OnChanges {
 
     public message = {};
     ngOnInit(): void {
-
         this.message = this.messageData;
     }
 
     ngOnChanges(): void {
         this.message = this.messageData;
-    }
+    }    
 }
