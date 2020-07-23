@@ -28,7 +28,7 @@
     "prepush": "npm run lint:ci",
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
     "start:heroku": "node dist/server",
-"postinstall": "npm run build:ssr"
+    "postinstall": "npm run build:ssr"
   },
   "dependencies": {
     "@akveo/ng2-completer": "^9.0.1",
