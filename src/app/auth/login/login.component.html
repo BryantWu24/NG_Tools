@@ -14,25 +14,26 @@
       <div class="row" style="display:flex; align-items: center; padding: 15px 0;">
         <label class="label" style="font-size:medium">密碼</label>
       </div>
-      <div class="row"><input nbInput fullWidth placeholder="Plz enter password..." [(ngModel)]="passwordInput"
+      <div class="row">
+        <input type="password" nbInput fullWidth placeholder="Plz enter password..." [(ngModel)]="passwordInput"
           required></div>
       <br>
       <div style="color: red;">
-          {{errorMessage}}
+        {{errorMessage}}
       </div>
       <div class="row" style="padding-top:1rem">
         <div class="col-6 ">
-          <button nbButton status="primary" fullWidth outline (click)="login('Guest')" >
+          <button nbButton status="primary" fullWidth outline (click)="login('Guest')">
             <nb-icon icon="person-outline"></nb-icon>訪客登入
           </button>
         </div>
         <div class="col-6 ">
-          <button nbButton status="primary" fullWidth outline   (click)="login('Member')">
+          <button nbButton status="primary" fullWidth outline (click)="login('Member')">
             <nb-icon icon="person-outline"></nb-icon>會員登入
           </button>
         </div>
         <div class="col-12 " style="display: flex; justify-content:center ; padding: 1rem 0;">
-          <button nbButton status="success"  outline  fullWidth>
+          <button nbButton status="success" outline fullWidth>
             <nb-icon icon="person-add-outline"></nb-icon>註冊
           </button>
         </div>
