@@ -57,11 +57,16 @@ export class ChatIndexComponent {
     enterRoom(info?): void {
         if (info) {
             this.chatService.setRoomInfo(info);
+            console.log('info',info);
             this.router.navigate(['pages/chat/room']);
         }
         else {
             this.router.navigate(['pages/chat/room']);
         }
+    }
+
+    createBtn():void{
+        this.router.navigate(['pages/chat/create']);
     }
 
 }

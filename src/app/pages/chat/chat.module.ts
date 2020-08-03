@@ -6,9 +6,13 @@ import { ThemeModule } from '../../@theme/theme.module';
 
 import { ChatRoutingModule, routedComponents } from './chat-routing.module';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChatService } from './chat.service';
+import { ChatMsgBoxComponent } from './chat/chat.component';
+import { ChatMessageComponent } from './chatMessage/chat-message.component';
 const components = [
+    ChatMsgBoxComponent,
+    ChatMessageComponent
 ];
 
 @NgModule({
@@ -25,7 +29,8 @@ const components = [
         NbUserModule,
         NbInputModule,
         NbButtonModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
     declarations: [...routedComponents, ...components],
     providers: [ChatService]

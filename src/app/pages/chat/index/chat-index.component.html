@@ -1,7 +1,18 @@
 <div class="row">
   <div class="col-lg-7 col-md-5 col-sm-12">
     <nb-card>
-      <nb-card-header>房間清單</nb-card-header>
+      <nb-card-header>
+        <div class="row">
+          <div class="col-8 col-md-8 col-lg-10">
+            房間清單
+          </div>
+          <div class="col-4 col-md-4 col-lg-2">
+            <button nbButton size="small" status="primary" (click)="createBtn()">
+              <nb-icon icon="plus"></nb-icon>建立房間
+            </button>
+          </div>
+        </div>
+      </nb-card-header>
       <nb-card-body>
         <div style="display: flex; flex-wrap: wrap;">
           <div *ngFor="let room of roomList" style="display: flex; justify-content: center;"

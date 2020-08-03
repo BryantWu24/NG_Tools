@@ -4,9 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ChatIndexComponent } from './index/chat-index.component';
 import { ChatComponent } from './chat.component';
 import { ChatRoomComponent } from './room/chat-room-index.component';
-import { ChatMsgBoxComponent } from './chat/chat.component';
-import { NbChatMessageFileComponent, NbChatMessageComponent, NbChatMessageMapComponent, NbChatMessageQuoteComponent, NbChatMessageTextComponent } from '@nebular/theme';
-import { ChatMessageComponent } from './chatMessage/chat-message.component';
+import { ChatCreateComponent } from './create/chat-create-components';
 
 const routes: Routes = [{
     path: '',
@@ -18,6 +16,9 @@ const routes: Routes = [{
     {
         path: 'room',
         component: ChatRoomComponent
+    }, {
+        path: 'create',
+        component: ChatCreateComponent
     }]
 }];
 
@@ -31,6 +32,5 @@ export const routedComponents = [
     ChatComponent,
     ChatIndexComponent,
     ChatRoomComponent,
-    ChatMsgBoxComponent,
-    ChatMessageComponent
+    ChatCreateComponent
 ];

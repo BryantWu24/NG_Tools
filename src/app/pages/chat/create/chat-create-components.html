@@ -1,0 +1,46 @@
+<nb-card>
+    <nb-card-header>
+        建立房間
+    </nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="createForm">
+            <div class="col-12" >
+                <div class="col-12" style="padding: 5px 15px;">
+                    房間名稱
+                </div>
+                <div class="col-12" style="padding: 5px 15px;">
+                    <input formControlName="roomName" nbInput fullWidth placeholder="請輸入房間名稱">
+                </div>
+                <div class="col-12" style="padding: 5px 15px;">
+                    聊天室主題影片
+                </div>
+                <div class="col-12" style="padding: 5px 15px;">
+                    <input formControlName="youtubeUrl" nbInput fullWidth placeholder="請輸入影片網址">
+                </div>
+                <div class="col-12" style="padding:5px 15px">
+                    <div style="color: red;">
+                        {{errorMessage}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-md-6 col-lg-6" style="padding:5px 15px">
+                        <button nbButton size="small" (click)="linkYoutube()">
+                            前往 Youtube 找影片
+                        </button>
+                    </div>
+                    <div class="col-6 col-md-6 col-lg-6">
+                        <div style="display: flex; justify-content:flex-end; padding:5px 15px;">
+                            <div>
+                                <button nbButton (click)="submit()" size="small">
+                                    建立
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+    </nb-card-body>
+</nb-card>
