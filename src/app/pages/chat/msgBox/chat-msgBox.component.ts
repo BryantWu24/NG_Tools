@@ -6,9 +6,9 @@ import zhHant from '@angular/common/locales/zh-Hant';
 import { Subscription } from 'rxjs';
 registerLocaleData(zhHant, 'zh-tw');
 @Component({
-    selector: 'jb-chat-msgbox',
-    templateUrl: './chat.component.html',
-    styleUrls: ['./chat.component.scss'],
+    selector: 'chat-msgBox',
+    templateUrl: './chat-msgBox.component.html',
+    styleUrls: ['./chat-msgBox.component.scss'],
     providers: [ChatService],
 })
 export class ChatMsgBoxComponent implements OnDestroy, OnInit {

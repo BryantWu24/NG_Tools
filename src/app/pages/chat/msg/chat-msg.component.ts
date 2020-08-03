@@ -1,9 +1,9 @@
 import { Component, Input, OnInit, OnChanges } from "@angular/core";
 
 @Component({
-    selector: 'jb-chatMessage',
-    templateUrl: './chat-message.component.html',
-    styleUrls: ['./chat-message.component.scss']
+    selector: 'chat-msg',
+    templateUrl: './chat-msg.component.html',
+    styleUrls: ['./chat-msg.component.scss']
 })
 export class ChatMessageComponent implements OnInit, OnChanges {
     @Input() messageData;

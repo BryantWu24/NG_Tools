@@ -24,6 +24,11 @@ export class ChatCreateComponent implements OnInit {
     linkYoutube(): void {
         window.open('http://www.youtube.com.tw', '_blank');
     }
+
+    closeChatCreate():void{
+        this.router.navigate(['pages/chat/index']);
+    }
+
     submit(): void {
         for (const i in this.createForm.controls) {
             this.createForm.controls[i].markAsDirty();

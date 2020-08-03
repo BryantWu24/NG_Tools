@@ -1,22 +1,24 @@
 <div class="row">
-  <div class="col-lg-7 col-md-5 col-sm-12">
+  <div class="col-xl-9 col-lg-8 col-md-6 col-sm-12">
     <nb-card>
       <nb-card-header>
         <div class="row">
-          <div class="col-8 col-md-8 col-lg-10">
+          <div class="col-8 col-md-8 col-lg-8">
             房間清單
           </div>
-          <div class="col-4 col-md-4 col-lg-2">
-            <button nbButton size="small" status="primary" (click)="createBtn()">
-              <nb-icon icon="plus"></nb-icon>建立房間
-            </button>
+          <div class="col-4 col-md-4 col-lg-4">
+            <div style="display: flex; justify-content: flex-end;">
+              <button nbButton size="small" status="primary" (click)="createBtn()">
+                <nb-icon icon="plus"></nb-icon>建立房間
+              </button>
+            </div>
           </div>
         </div>
       </nb-card-header>
       <nb-card-body>
         <div style="display: flex; flex-wrap: wrap;">
           <div *ngFor="let room of roomList" style="display: flex; justify-content: center;"
-            class="col-lg-4 col-md-12 col-sm-12 col-12">
+            class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
             <nb-card>
               <nb-card-header>
                 <div style="display: flex;justify-content:space-between;">
@@ -51,7 +53,7 @@
       </nb-card-body>
     </nb-card>
   </div>
-  <div class="col-lg-5 col-md-7 col-sm-12">
+  <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
     <nb-card>
       <nb-card-header>Pie</nb-card-header>
       <nb-card-body>
